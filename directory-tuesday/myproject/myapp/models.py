@@ -1,5 +1,7 @@
 from django.db import models
 from unicodedata import name
+from django.forms import ModelForm
+from myapp.models import Reservation
 
 
 # Create your models here.
@@ -41,3 +43,9 @@ class User(models.Model):
 
 
 
+class ReservationForm(ModelForm):
+          class Meta:
+                    model = Reservation
+                    fields = ['name' ,  'seats' , 'content' , 'reporter' ]
+form = ReservationForm()
+                    
