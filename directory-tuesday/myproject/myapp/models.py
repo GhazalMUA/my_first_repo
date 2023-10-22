@@ -1,7 +1,5 @@
 from django.db import models
 from unicodedata import name
-from django.forms import ModelForm
-from myapp.models import Reservation
 
 
 # Create your models here.
@@ -24,7 +22,7 @@ class Customer(models.Model):
 class Vehicle(models.Model): 
     name = models.CharField(max_length=255) 
     customer = models.ForeignKey( 
-        Customer, 
+        Customer,
         on_delete=models.CASCADE, 
         related_name='Vehicle' 
     ) 
@@ -33,19 +31,32 @@ class Vehicle(models.Model):
 
 
 
-
+    
 class User(models.Model):
     firstname=models.CharField(max_length=30)
     lastname=models.CharField(max_length=40)
     age=models.IntegerField()
     birthdate=models.DateField(null=True,blank=True)
     are_you_an_old_user=models.BooleanField(default=True)
+    
+VARZESH=[
+      ('1', 'BODYCOMBAT'),
+      ('2' , 'BODYPUMP'),
+      ('3', 'FUNCTIONAL'),
+]
+
+class ghaz(models.Model):
+    first_name = models.CharField(max_length =200)
+    last_name = models.CharField(max_length=200)
+    age = models.IntegerField( help_text='enter your exact age')
+    varzesh_ENTEKHABI=models.CharField(choices=VARZESH , max_length=1 , default='FUNCTIONAL')
+
+    def __str__(self):
+        return self.first_name
 
 
-
-class ReservationForm(ModelForm):
-          class Meta:
-                    model = Reservation
-                    fields = ['name' ,  'seats' , 'content' , 'reporter' ]
-form = ReservationForm()
-                    
+class Logger(models.Model):
+    esm=models.CharField(max_length=100)
+    famil=models.CharField(max_length=100)
+    time_log=models.TimeField(help_text="enter the exact time!")
+    

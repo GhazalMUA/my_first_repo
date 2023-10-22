@@ -1,7 +1,10 @@
-from . import views
 from django.contrib import admin
 from django.urls import path
+from myapp import views
 
 urlpatterns = [
-    path('Home/' , views.form_view)
+    path('Admin/', admin.site.urls),
+    path('information/', views.ghazaview),
+    path('home/', views.form_view),
+    path('shoma/', views.formedo_view),
 ]
