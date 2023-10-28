@@ -7,4 +7,5 @@ urlpatterns = [
     path('information/', views.ghazaview),
     path('home/', views.form_view),
     path('shoma/', views.formedo_view),
+    path('about/', views.about),
 ]

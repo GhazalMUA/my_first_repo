@@ -35,3 +35,12 @@ def ghazaview(request):
             form.save()
     context = {"form" : form} 
     return render (request , "ht2.html" , context)        
+
+
+
+
+def about(request):
+    about_mohtava = {'about' : "inja site e ghazal mua st. dige base fekonm dood maghzeto baste"}
+    return render(request, 'about.html' , about_mohtava)
+
+
