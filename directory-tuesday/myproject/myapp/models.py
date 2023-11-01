@@ -38,6 +38,9 @@ class User(models.Model):
     age=models.IntegerField()
     birthdate=models.DateField(null=True,blank=True)
     are_you_an_old_user=models.BooleanField(default=True)
+    def __str__(self):
+        return self.firstname
+    
     
 VARZESH=[
       ('1', 'BODYCOMBAT'),
