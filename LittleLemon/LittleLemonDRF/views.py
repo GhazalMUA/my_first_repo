@@ -1,8 +1,9 @@
+
 from django.shortcuts import render
-from django.http import HttpResponse
-# Create your views here.
-def RatingsView(request):
-    context= "<html><body><h1>welcome</h1></body></html>"  
-    return HttpResponse(context)
+from rest_framework.response import Response
+from rest_framework import status 
+from rest_framework.decorators import api_view
 
-
+@api_view()
+def books(request):
+    return Response('list of books', status=status.HTTP_200_OK)

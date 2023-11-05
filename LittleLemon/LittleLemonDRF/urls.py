@@ -1,7 +1,7 @@
 from django.urls import path
-from LittleLemonDRF import views
+from . import views
 
 urlpatterns = [
-    path('ratings', views.RatingsView),
+    path('books/', views.books),
 ]
- 
+
