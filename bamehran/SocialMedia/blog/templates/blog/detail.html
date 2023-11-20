@@ -1,0 +1,38 @@
+<style>
+    article {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #666;
+        line-height: 1.6;
+    }
+</style>
+
+
+    <article>
+        <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
+        <h1>{{article.title }}</h1>
+        <small>{{article.publish}}</small>
+        
+        <p>{{ article.description }}</p>
+    </article>
+
