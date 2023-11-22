@@ -1,3 +1,4 @@
+<!--
 <style>
     article {
         border: 1px solid #ddd;
@@ -27,7 +28,6 @@
     }
 </style>
 
-
     <article>
         <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
         <h1>{{article.title }}</h1>
@@ -35,4 +35,79 @@
         
         <p>{{ article.description }}</p>
     </article>
+-->
 
+
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="fa" dir="rtl">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            <meta name="description" content="" />
+            <meta name="author" content="" />
+            <title>Grayscale - Start Bootstrap Theme</title>
+            <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" /> 
+            <!-- Font Awesome icons (free version)-->
+            <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+            <!-- Google fonts-->
+            <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+            <!-- Core theme CSS (includes Bootstrap)-->
+            <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        </head>
+           <body>
+
+                    <!-- Project Two Row-->
+                    <div class="row gx-0 justify-content-center">      
+                        <div class="col-lg-6"><img class="img-fluid" src="{{ article.thumbnail.url }}" alt="{{ article.title }}" /></div>
+                        <div class="col-lg-6 order-lg-first">
+                            <div class="bg-black text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-right">
+                                        <h4 class="text-white">{{article.title }}</h4>
+                                        <p class="mb-0 text-white-50">{{ article.description }}</p>
+                                    </div>
+                                </div>
+                            </div>                                             
+                        </div>
+                    </div>
+            </body>                                 
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {% load static %}
+            <!DOCTYPE html>
+            <html lang="fa" dir="rtl">
+                <head>
+                    <meta charset="utf-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+                    <meta name="description" content="" />
+                    <meta name="author" content="" />
+                    <title>Grayscale - Start Bootstrap Theme</title>
+                    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" /> 
+                    <!-- Font Awesome icons (free version)-->
+                    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+                    <!-- Google fonts-->
+                    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+                    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+                    <!-- Core theme CSS (includes Bootstrap)-->
+                    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+                </head>            
