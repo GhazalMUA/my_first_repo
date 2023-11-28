@@ -6,4 +6,3 @@ class RegisteringForm(forms.ModelForm):
     class Meta:
         model=RegisteringModel
         fields= '__all__'
-          

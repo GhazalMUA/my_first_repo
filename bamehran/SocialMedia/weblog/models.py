@@ -38,22 +38,15 @@ class Article(models.Model):
     
     def jpublish(self):
         return jalali_converter(self.publish)
-    jpublish.short_decription = "زمان انتشار"
+    jpublish.short_description = "زمان انتشار"
     
-
-
-
-
-
-
-
 
 
 class RegisteringModel(models.Model):
     first_name=models.CharField(max_length=30, verbose_name='نام')
     last_name=models.CharField(max_length=80, verbose_name='نام خانوادگی')
     birth_date=models.DateField(auto_now=True)
-    phone_number=models.IntegerField(verbose_name='شماره تلفن همراه')
+    phone_number=models.CharField(max_length=12 , verbose_name='شماره تلفن همراه')
     email_address=models.EmailField(null=True, blank=True , verbose_name='ایمیل')
     address=models.CharField(max_length=200)
     def __str__(self):

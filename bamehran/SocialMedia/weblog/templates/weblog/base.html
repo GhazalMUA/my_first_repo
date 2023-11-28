@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Grayscale - Start Bootstrap Theme</title>
+        <title>ghazalMUA</title>
         <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" /> 
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -27,9 +27,18 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'blog:about' %}">درباره ما</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">پروژه‌ها</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'weblog:about' %}">درباره ما</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{%url 'weblog:sabtenam' %}">ثبت نام</a></li>
                         <li class="nav-item"><a class="nav-link" href="#signup">تماس با ما</a></li>
+                        <li class="nav-item">
+                            {% if user.is_authenticated %}
+                                <span >خوش آمدی {{user.get_full_name}} عزیز , <a href="{% url 'logout' %}?next={{request.path}}"  >خروج</a></span>
+                            {% else %}
+                                <a href="{% url 'weblog:sabtenam' %}" class="btn btn-dsanger" >لاگین/ثبت نام با گوگل</a>
+                            {% endif %}
+                        </li>
+                    <!--   <li class="nav-item"><a class="nav-link" href="">خروج</a></li> --> 
+                    <!--    <li class="nav-item"><a class="btn" href="{%url 'weblog:loginG' %}">لاگین با گوگل</a></li> -->
                     </ul>
                 </div>
             </div>

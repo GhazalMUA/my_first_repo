@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <title>ثبت نام</title>
+</head>
+<body>
+
+  <h2>ثبت نام</h2>
+
+  <form method="post" action="{% url 'weblog:sabtenam' %}">
+     {% csrf_token %}
+     {{ form.as_p }}
+     <input type="submit">دکمه را فشار دهید</button>
+
+  <!--   <button class="btn" onclick="window.location.href='{% url 'weblog:loginG' %}'">لاگین با گوگل</button>
+-->       
+<button class="btn" id="loginButton">لاگین با گوگل</button>
+
+<script type="text/javascript">
+    document.getElementById('loginButton').addEventListener('click', function() {
+        window.location.href = "{% url '' %}";
+    });
+</script>
+         
+  </form>
+  
+</body>
+</html>
