@@ -27,16 +27,21 @@ class Book(models.Model):
           models.Index(fields=['price']),
         ]
     def __str__(self):
-        return self.title    
+        return self.title  
     
     
     
-    
-    
+class Dastebandi(models.Model):
+   
+    title=models.CharField(max_length=50 )
+    slug=models.SlugField()
+    def __str__(self):
+        return self.title
     
 class RestaurantMenu(models.Model):
     title=models.CharField(max_length=50)
     price=models.DecimalField(max_digits=6, decimal_places=2)
-    inventory=models.SmallIntegerField()    
+    inventory=models.SmallIntegerField()
+    dastebandi=models.ForeignKey(Dastebandi, on_delete=models.PROTECT, default=1)
     def __str__(self):
-        return self.title  
+        return self.title
